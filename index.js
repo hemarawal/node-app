@@ -21,7 +21,11 @@ app.use("/api/contacts", contactRoutes);
 app.use("/api/user", userRoutes);
 
 app.get("/", (req, res) => {
-  res.status(200).render("home");
+  res.render("home");
+});
+
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'healthy' });
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

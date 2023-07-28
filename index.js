@@ -6,6 +6,14 @@ const contactRoutes = require("./routes/contactRoute");
 const errorHandler = require("./middleware/errorHandler");
 const ConnectDB = require("./config/dbConnection");
 const userRoutes = require("./routes/userRoutes");
+const cors = require("cors");
+
+const corsOptions = {
+  origin: "*",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 const port = process.env.PORT || 5000;
 app.use(express.json());

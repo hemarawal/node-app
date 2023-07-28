@@ -21,7 +21,7 @@ app.use("/api/contacts", contactRoutes);
 app.use("/api/user", userRoutes);
 
 app.get("/", (req, res) => {
-  res.render("home");
+  res.status(200).render("home");
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

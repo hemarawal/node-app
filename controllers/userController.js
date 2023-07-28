@@ -51,7 +51,7 @@ const loginUser = asyncHandler(async (req, res) => {
         process.env.SECRET_TOKEN,
         { expiresIn: "15m" }
       );
-      res.status(200).render("showContact");
+      res.status(200).redirect("/api/contacts");
     }
   } else {
     res.status(401);

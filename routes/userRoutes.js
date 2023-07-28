@@ -7,6 +7,10 @@ const {
 } = require("../controllers/userController");
 const validateToken = require("../middleware/validateTokenhandler");
 
+router.get("/register",(req,res)=>{
+  res.render("register");
+})
+
 router.post("/register", registerUser);
 
 router.post("/login", loginUser);

@@ -22,7 +22,7 @@ const registerUser = asyncHandler(async (req, res) => {
       password: hashedPassword,
     });
     if (newUser) {
-      res.status(201).json({ _id: newUser.id, email: newUser.email });
+      res.status(201).render("home");
     } else {
       res.status(400);
       throw new Error("User data is not valid...");
@@ -51,7 +51,7 @@ const loginUser = asyncHandler(async (req, res) => {
         process.env.SECRET_TOKEN,
         { expiresIn: "15m" }
       );
-      res.status(200).json({ accessToken });
+      res.status(200).render("showContact");
     }
   } else {
     res.status(401);

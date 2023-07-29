@@ -3,8 +3,9 @@ const Contact = require("../models/contactModel");
 
 // Get All the contact present in DB.
 const getContacts = asyncHandler(async (req, res) => {
+  console.log("request reached here...")
   const contacts = await Contact.find({ user_id: req.user.id }).sort("name");
-  // console.log(contacts);
+  console.log(contacts);
   if (contacts) res.render("showContact", { contacts });
   // res.status(200).json(contacts);
 });

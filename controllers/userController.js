@@ -55,7 +55,7 @@ const loginUser = asyncHandler(async (req, res) => {
         { expiresIn: "15m" }
       );
       console.log("redirecting now...")
-      res.redirect("/api/contacts");
+      res.redirect("http://localhost:5000/api/contacts");
     }
   } else {
     res.status(401);

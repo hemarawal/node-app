@@ -32,14 +32,17 @@ const registerUser = asyncHandler(async (req, res) => {
 
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
+  console.log(req.body);
   if (!email || !password) {
     res.status(400);
     throw new Error("All perameters required...");
   }
   const user = await User.findOne({ email });
   if (user) {
+    console.log("user exists...")
     isPasswordMatched = await bcrypt.compare(password, user.password);
     if (isPasswordMatched) {
+      console.log("password-matched..")
       const accessToken = jwt.sign(
         {
           user: {

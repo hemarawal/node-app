@@ -54,8 +54,7 @@ const loginUser = asyncHandler(async (req, res) => {
         process.env.SECRET_TOKEN,
         { expiresIn: "15m" }
       );
-      console.log("redirecting now...")
-      res.redirect("http://localhost:5000/api/contacts");
+      res.redirect("/info");
     }
   } else {
     res.status(401);

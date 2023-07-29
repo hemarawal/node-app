@@ -11,7 +11,7 @@ const validateTokenHandler = require("../middleware/validateTokenhandler");
 
 router.use(validateTokenHandler);
 
-router.get("/", getContacts);
+router.get("/info", getContacts);
 
 router.get("/:id", getContact);
 

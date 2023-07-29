@@ -25,8 +25,8 @@ app.set("view engine", "ejs");
 ConnectDB();
 
 // Middleware for the router...
-app.use("/api/contacts", contactRoutes);
-app.use("/api/user", userRoutes);
+app.use("/api", contactRoutes);
+app.use("/api", userRoutes);
 
 app.get("/", (req, res) => {
   res.render("home");
